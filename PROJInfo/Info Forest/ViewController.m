@@ -78,8 +78,9 @@
    // Request *http=[[Request alloc] init];
     //[[self view]addSubview:[http imageRequest:@"http://whatscookingamerica.net/Desserts/PumpkinPie5.jpg":&screenSize.size.width:&screenSize.size.height]];
     
-    //Request *http=[[Request alloc] init];
+    Request *http=[[Request alloc] init];
     //[http xmlRequest:@"http://legalindexes.indoff.com/sitemap.xml"];
+    [http getXML:@"http://legalindexes.indoff.com/sitemap.xml"];
 }
 
 - (void)viewDidUnload

@@ -52,10 +52,9 @@
         NSLog(@"Failure!");
     }];
     
-    [operation start];              
+    [operation start];           
 
     return  operation;
-    
 }
 
 
@@ -64,6 +63,78 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, *width, *height)];
     [imageView setImageWithURL:[NSURL URLWithString:imageurl] placeholderImage:[UIImage imageNamed:@"abc.jpg"]];
     return imageView;
+}
+
+
+-(void)getXML:(NSString *)xmlurl 
+{
+    NSLog(@"Entered XML get function...\n\n");
+    if([xmlData count] == 0) {
+        // Create the feed string, in this case I have used dBlog
+        NSString *url = xmlurl;
+        NSLog(@"Size of xmlData: %d", [xmlData count]);
+        // Call the grabRSSFeed function with the above
+        // string as a parameter
+        [self loadXML:url];
+        
+    }
+    for (int i = 0; i < [xmlData count]; i++) {
+        NSLog(@"Title of video number %d: %@", i +1, [[xmlData objectAtIndex: i] objectForKey: @"title"]);
+        NSLog(@"Description of video number %d: %@", i +1, [[xmlData objectAtIndex: i] objectForKey: @"description"]);
+        NSLog(@"Publication Date of video number %d: %@", i +1, [[xmlData objectAtIndex: i] objectForKey: @"puDate"]);
+        NSLog(@"Link of video number %d: %@\n\n", i +1, [[xmlData objectAtIndex: i] objectForKey: @"link"]);
+    }
+
+}
+
+-(void)loadXML:(NSString *)xmlURL {
+    NSLog(@"Entered XML load function...\n\n");
+    
+    // Initialize the blogEntries MutableArray that we declared in the header
+    xmlData = [[NSMutableArray alloc] init];	
+    
+    // Convert the supplied URL string into a usable URL object
+    NSURL *url = [NSURL URLWithString: @"http://gdata.youtube.com/feeds/api/users/coalinkentucky/uploads?alt=rss"];
+
+    // Create a new rssParser object based on the TouchXML "CXMLDocument" class, this is the
+    // object that actually grabs and processes the RSS data
+    CXMLDocument *xmlParser = [[[CXMLDocument alloc] initWithContentsOfURL:url options:0 error:nil] autorelease];
+    
+    
+    ///////////////////////USE FOR READING FROM A LOCAL XML FILE//////////////////////////////////////////////
+    //NSString *XMLPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"sitemap.xml"];
+    //NSData *XMLData   = [NSData dataWithContentsOfFile:XMLPath];
+    //CXMLDocument *xmlParser = [[CXMLDocument alloc] initWithData:XMLData options:0 error:nil];
+    //////////////////////USE FOR READING FROM A LOCAL XML FILE///////////////////////////////////////////////
+    
+    
+    NSLog(@"# of childNodes: %d", [xmlParser childCount]);
+    
+    // Create a new Array object to be used with the looping of the results from the rssParser
+    // Set the resultNodes Array to contain an object for every instance of an  node in our RSS feed
+    NSArray *resultNodes = [xmlParser nodesForXPath:@"//item" error:nil];
+    
+    NSLog(@"# of resultNodes: %d", [resultNodes count]);
+
+    // Loop through the resultNodes to access each items actual data
+    for (CXMLElement *resultElement in resultNodes) {
+        NSLog(@"Entered XML data tree building sequence...\n\n");
+        // Create a temporary MutableDictionary to store the items fields in, which will eventually end up in blogEntries
+        NSMutableDictionary *blogItem = [[NSMutableDictionary alloc] init];
+        
+        // Create a counter variable as type "int"
+        int counter;
+        
+        // Loop through the children of the current  node
+        for(counter = 0; counter < [resultElement childCount]; counter++) {
+            
+            // Add each field to the blogItem Dictionary with the node name as key and node value as the value
+            [blogItem setObject:[[resultElement childAtIndex:counter] stringValue] forKey:[[resultElement childAtIndex:counter] name]];
+        }
+        
+        // Add the blogItem to the global blogEntries Array so that the view can access it.
+        [xmlData addObject:[blogItem copy]];
+    }
 }
 
 
