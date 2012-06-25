@@ -12,8 +12,6 @@
 
 
 @class Request;
-
-
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableArray *buttonList;
 @end
@@ -24,17 +22,39 @@
 @synthesize textField;
 
 
-
 - (void)buttonClicked:(UIButton*)button
 {
     NSLog(@"Button %ld clicked.", (long int)[button tag]);
 }
 
+- (void)embedYouTube:(NSString *)urlString frame:(CGRect)frame {
+    NSString *embedHTML = @"\
+    <html><head>\
+    <style type=\"text/css\">\
+    body {\
+    background-color: transparent;\
+    color: white;\
+    }\
+    </style>\
+    </head>body style =\"margin:0\">\
+    <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\"\
+    width=\"%0.0f\" height=\"%0.0f\"></embed>\
+    </body></html>";
+    
+    NSString *html = [NSString stringWithFormat:embedHTML, urlString, frame.size.width, frame.size.height];
+    NSLog(html);
+    UIWebView *videoView = [[UIWebView alloc] initWithFrame:frame];
+    [videoView loadHTMLString:html baseURL:nil];
+    [self.view addSubview:videoView];
+}
+
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
-    int numberOfButtons = 6;
+    
+     int numberOfButtons = 6;
     _buttonList = [[NSMutableArray alloc] init];
     
     
@@ -65,10 +85,13 @@
             [[self scroll]addSubview:temp];
         }
     }
+     
     
     scroll.frame = CGRectMake(0, 0, screenSize.size.width, screenSize.size.height);
     [scroll setContentSize:CGSizeMake(screenSize.size.width, numberOfButtons*buttonHeight+screenSize.size.height)];
     [[self view] addSubview:scroll];  
+     
+
     
    
    // Request *http=[[Request alloc] init];
@@ -81,6 +104,8 @@
     Request *http=[[Request alloc] init];
     //[http xmlRequest:@"http://legalindexes.indoff.com/sitemap.xml"];
     [http getXML:@"http://legalindexes.indoff.com/sitemap.xml"];
+    
+    [self embedYouTube:@"http://www.youtube.com/watch?v=SvGOYh9J6q4" frame:CGRectMake(20,20, 200,200)];
 }
 
 - (void)viewDidUnload

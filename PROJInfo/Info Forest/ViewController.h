@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController : UIViewController {
     UIScrollView *scroll;
     NSMutableArray *buttonList;
     UITextField *textField;
+    MPMoviePlayerController *movieController;
 }
 
 @property (retain,nonatomic) IBOutlet UIScrollView *scroll;
 @property (retain,nonatomic) IBOutlet UITextField *textField;
 
+-(void)embedYouTube:(NSString *)urlString frame:(CGRect)frame;
 @end
