@@ -21,6 +21,12 @@
 		EFC2885015936995007406EC /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2884015936995007406EC /* CXMLNode_XPathExtensions.m */; };
 		EFC2885115936995007406EC /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2884315936995007406EC /* CTidy.m */; };
 		EFC2886C15937A81007406EC /* sitemap.xml in Resources */ = {isa = PBXBuildFile; fileRef = EFC2886B15937A81007406EC /* sitemap.xml */; };
+		F22D970B1598F5C9004FD1D6 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F22D96FE1598F5C9004FD1D6 /* DDXMLElementAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F22D970C1598F5CA004FD1D6 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = F22D97011598F5C9004FD1D6 /* NSString+DDXML.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F22D970D1598F5CA004FD1D6 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F22D97041598F5C9004FD1D6 /* DDXMLDocument.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F22D970E1598F5CA004FD1D6 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F22D97061598F5C9004FD1D6 /* DDXMLElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F22D970F1598F5CA004FD1D6 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F22D97081598F5C9004FD1D6 /* DDXMLNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F22D9713159A094F004FD1D6 /* imgcache.m in Sources */ = {isa = PBXBuildFile; fileRef = F22D9712159A094F004FD1D6 /* imgcache.m */; };
 		F24BBEBC1590B5DD004C6F0A /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F24BBEBB1590B5DD004C6F0A /* Request.m */; };
 		F24BBED6159252B0004C6F0A /* AFKissXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F24BBED3159252B0004C6F0A /* AFKissXMLRequestOperation.m */; };
 		F24BBED7159252B0004C6F0A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F24BBED4159252B0004C6F0A /* LICENSE */; };
@@ -90,6 +96,20 @@
 		EFC2884315936995007406EC /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		EFC2884415936995007406EC /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		EFC2886B15937A81007406EC /* sitemap.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sitemap.xml; sourceTree = "<group>"; };
+		F22D96FD1598F5C9004FD1D6 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		F22D96FE1598F5C9004FD1D6 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		F22D97001598F5C9004FD1D6 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
+		F22D97011598F5C9004FD1D6 /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
+		F22D97021598F5C9004FD1D6 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		F22D97031598F5C9004FD1D6 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		F22D97041598F5C9004FD1D6 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		F22D97051598F5C9004FD1D6 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		F22D97061598F5C9004FD1D6 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		F22D97071598F5C9004FD1D6 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		F22D97081598F5C9004FD1D6 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		F22D970A1598F5C9004FD1D6 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		F22D9711159A094F004FD1D6 /* imgcache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgcache.h; sourceTree = "<group>"; };
+		F22D9712159A094F004FD1D6 /* imgcache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imgcache.m; sourceTree = "<group>"; };
 		F24BBEBA1590B5DD004C6F0A /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		F24BBEBB1590B5DD004C6F0A /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		F24BBED2159252B0004C6F0A /* AFKissXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFKissXMLRequestOperation.h; sourceTree = "<group>"; };
@@ -213,6 +233,49 @@
 			path = Tidy;
 			sourceTree = "<group>";
 		};
+		F22D96FB1598F5C9004FD1D6 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				F22D96FC1598F5C9004FD1D6 /* Additions */,
+				F22D96FF1598F5C9004FD1D6 /* Categories */,
+				F22D97021598F5C9004FD1D6 /* DDXML.h */,
+				F22D97031598F5C9004FD1D6 /* DDXMLDocument.h */,
+				F22D97041598F5C9004FD1D6 /* DDXMLDocument.m */,
+				F22D97051598F5C9004FD1D6 /* DDXMLElement.h */,
+				F22D97061598F5C9004FD1D6 /* DDXMLElement.m */,
+				F22D97071598F5C9004FD1D6 /* DDXMLNode.h */,
+				F22D97081598F5C9004FD1D6 /* DDXMLNode.m */,
+				F22D97091598F5C9004FD1D6 /* Private */,
+			);
+			path = KissXML;
+			sourceTree = "<group>";
+		};
+		F22D96FC1598F5C9004FD1D6 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				F22D96FD1598F5C9004FD1D6 /* DDXMLElementAdditions.h */,
+				F22D96FE1598F5C9004FD1D6 /* DDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		F22D96FF1598F5C9004FD1D6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F22D97001598F5C9004FD1D6 /* NSString+DDXML.h */,
+				F22D97011598F5C9004FD1D6 /* NSString+DDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		F22D97091598F5C9004FD1D6 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				F22D970A1598F5C9004FD1D6 /* DDXMLPrivate.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		F24BBED1159252B0004C6F0A /* AFNetworking-AFKissXMLRequestOperation-e5d8dff */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +291,7 @@
 		F2BE7C0B158B91CE000707F4 = {
 			isa = PBXGroup;
 			children = (
+				F22D96FB1598F5C9004FD1D6 /* KissXML */,
 				EFC2882715936995007406EC /* TouchXML */,
 				F24BBED1159252B0004C6F0A /* AFNetworking-AFKissXMLRequestOperation-e5d8dff */,
 				F2BE7C72158B947C000707F4 /* AFNetworking */,
@@ -265,6 +329,8 @@
 				F2BE7C2A158B91CF000707F4 /* AppDelegate.m */,
 				F2BE7C2C158B91CF000707F4 /* ViewController.h */,
 				F2BE7C2D158B91CF000707F4 /* ViewController.m */,
+				F22D9711159A094F004FD1D6 /* imgcache.h */,
+				F22D9712159A094F004FD1D6 /* imgcache.m */,
 				F24BBEBA1590B5DD004C6F0A /* Request.h */,
 				F24BBEBB1590B5DD004C6F0A /* Request.m */,
 				F2BE7C2F158B91CF000707F4 /* ViewController_iPhone.xib */,
@@ -472,6 +538,12 @@
 				EFC2884F15936995007406EC /* CXMLNode_PrivateExtensions.m in Sources */,
 				EFC2885015936995007406EC /* CXMLNode_XPathExtensions.m in Sources */,
 				EFC2885115936995007406EC /* CTidy.m in Sources */,
+				F22D970B1598F5C9004FD1D6 /* DDXMLElementAdditions.m in Sources */,
+				F22D970C1598F5CA004FD1D6 /* NSString+DDXML.m in Sources */,
+				F22D970D1598F5CA004FD1D6 /* DDXMLDocument.m in Sources */,
+				F22D970E1598F5CA004FD1D6 /* DDXMLElement.m in Sources */,
+				F22D970F1598F5CA004FD1D6 /* DDXMLNode.m in Sources */,
+				F22D9713159A094F004FD1D6 /* imgcache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

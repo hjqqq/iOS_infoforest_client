@@ -9,8 +9,10 @@
 
 #import "Request.h"
 #import "ViewController.h"
+#import "imgcache.h"
 
 
+@class imgcache;
 @class Request;
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableArray *buttonList;
@@ -42,7 +44,7 @@
     </body></html>";
     
     NSString *html = [NSString stringWithFormat:embedHTML, urlString, frame.size.width, frame.size.height];
-    NSLog(html);
+    //NSLog(html);
     UIWebView *videoView = [[UIWebView alloc] initWithFrame:frame];
     [videoView loadHTMLString:html baseURL:nil];
     [self.view addSubview:videoView];
@@ -90,22 +92,28 @@
     scroll.frame = CGRectMake(0, 0, screenSize.size.width, screenSize.size.height);
     [scroll setContentSize:CGSizeMake(screenSize.size.width, numberOfButtons*buttonHeight+screenSize.size.height)];
     [[self view] addSubview:scroll];  
-     
-
     
    
-   // Request *http=[[Request alloc] init];
+    //Request *http=[[Request alloc] init];
     //[http httpRequest:@"http://dev.vis.uky.edu/if/iphone+highDef"];
 
     
-   // Request *http=[[Request alloc] init];
+   //Request *http=[[Request alloc] init];
     //[[self view]addSubview:[http imageRequest:@"http://whatscookingamerica.net/Desserts/PumpkinPie5.jpg":&screenSize.size.width:&screenSize.size.height]];
     
+   /* 
     Request *http=[[Request alloc] init];
     //[http xmlRequest:@"http://legalindexes.indoff.com/sitemap.xml"];
     [http getXML:@"http://legalindexes.indoff.com/sitemap.xml"];
     
     [self embedYouTube:@"http://www.youtube.com/watch?v=SvGOYh9J6q4" frame:CGRectMake(20,20, 200,200)];
+    */
+    
+    
+
+    imgcache *cache=[[imgcache alloc] init];
+    [[self view] addSubview:[cache getImage:@"http://whatscookingamerica.net/Desserts/PumpkinPie5.jpg" :&screenSize.size.width:&screenSize.size.height]];
+    
 }
 
 - (void)viewDidUnload
