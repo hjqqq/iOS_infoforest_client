@@ -10,7 +10,8 @@
 #import "Request.h"
 #import "ViewController.h"
 #import "imgcache.h"
-
+#import "ImageView.h"
+#import "ThreeDViewController.h"
 
 @class imgcache;
 @class Request;
@@ -23,6 +24,25 @@
 @synthesize scroll;
 @synthesize textField;
 
+-(IBAction)_3Dgo {
+    ThreeDViewController *_3D = [[ThreeDViewController alloc] init];
+    
+    _3D.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [self presentModalViewController:_3D animated:YES];
+}
+
+-(IBAction)image:(id)sender {
+    
+    
+    ImageView *instanceOfView = [[ImageView alloc] init ];
+    
+    instanceOfView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentModalViewController:instanceOfView animated:YES];
+    
+    
+}
 
 - (void)buttonClicked:(UIButton*)button
 {
@@ -89,6 +109,14 @@
     }
      
     
+    //ImageView *instanceOfView = [[ImageView alloc] init ];
+    
+    //instanceOfView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    //[self presentModalViewController:instanceOfView animated:YES];
+    
+    
+    
     scroll.frame = CGRectMake(0, 0, screenSize.size.width, screenSize.size.height);
     [scroll setContentSize:CGSizeMake(screenSize.size.width, numberOfButtons*buttonHeight+screenSize.size.height)];
     [[self view] addSubview:scroll];  
@@ -101,19 +129,26 @@
    //Request *http=[[Request alloc] init];
     //[[self view]addSubview:[http imageRequest:@"http://whatscookingamerica.net/Desserts/PumpkinPie5.jpg":&screenSize.size.width:&screenSize.size.height]];
     
-   /* 
+    
     Request *http=[[Request alloc] init];
-    //[http xmlRequest:@"http://legalindexes.indoff.com/sitemap.xml"];
-    [http getXML:@"http://legalindexes.indoff.com/sitemap.xml"];
+    [http xmlRequest:@"http://legalindexes.indoff.com/sitemap.xml"];
+    /*[http getXML:@"http://legalindexes.indoff.com/sitemap.xml"];
     
     [self embedYouTube:@"http://www.youtube.com/watch?v=SvGOYh9J6q4" frame:CGRectMake(20,20, 200,200)];
     */
     
-    
-
+       
+/*    
     imgcache *cache=[[imgcache alloc] init];
-    [[self view] addSubview:[cache getImage:@"http://whatscookingamerica.net/Desserts/PumpkinPie5.jpg" :&screenSize.size.width:&screenSize.size.height]];
+   // [[self view] addSubview:[ [
+
+    UIImageView *johnImage =[[UIImageView alloc] initWithImage:[cache cacheImage:@"http://whatscookingamerica.net/Desserts/PumpkinPie5.jpg"]];
     
+    UIImageView *johnImage_2 = [[UIImageView alloc] initWithImage:[cache cacheImage:@"http://dev.vis.uky.edu/if/iphone+RGB+small+091"]];
+    //UIImageView *mainImage = [[UIImageView alloc ] initWithFrame:&screenSize.size.width:&screenSize.size.height ];
+    johnImage_2.frame= CGRectMake(0, 0, screenSize.size.width, screenSize.size.height);
+    [[self view] addSubview:johnImage_2];
+  */  
 }
 
 - (void)viewDidUnload

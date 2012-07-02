@@ -20,5 +20,7 @@
 @property (retain,nonatomic) IBOutlet UITextField *textField;
 
 -(void)embedYouTube:(NSString *)urlString frame:(CGRect)frame;
+-(IBAction)image:(id)sender;
+-(IBAction)_3Dgo;
 @end
 
